@@ -5,10 +5,7 @@ import com.sunxupeng.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -54,5 +51,16 @@ public class UserController {
     public String delete(@PathVariable("id") Long id){
         service.delete(id);
         return "redirect:/";
+    }
+
+    @RequestMapping("/test")
+    @ResponseBody
+    public String test(){
+        return "test success!";
+    }
+    @RequestMapping("/test1")
+    @ResponseBody
+    public String test1(){
+        return "test1 success!";
     }
 }
